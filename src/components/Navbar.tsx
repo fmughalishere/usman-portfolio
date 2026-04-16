@@ -2,9 +2,7 @@
 import { motion } from "framer-motion";
 
 export default function Navbar() {
-  // Aap ki Logo File ID yahan hai:
-  const logoID = "11XqpFHmhH2vADBS_-Yqmo9uiUUoPiwg6";
-  const logoUrl = `https://lh3.googleusercontent.com/d/${logoID}`;
+  const logoUrl = "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314428/logo_tvftsz.png";
 
   return (
     <motion.nav 
@@ -14,14 +12,8 @@ export default function Navbar() {
       <div className="flex items-center gap-3">
         <img 
           src={logoUrl} 
-          alt="Logo" 
+          alt="M. Usman Ghanni Logo" 
           className="h-10 w-auto object-contain" 
-          // Ye line block honay se bachati hai
-          referrerPolicy="no-referrer"
-          onError={(e) => {
-            // Agar pehla link fail ho to backup link
-            e.currentTarget.src = `https://docs.google.com/uc?export=view&id=${logoID}`;
-          }}
         />
         <span className="text-xl font-bold tracking-tighter uppercase hidden sm:block">
           M. Usman Ghanni

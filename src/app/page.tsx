@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Intro from "../components/Intro";
 import About from "../components/About";
+import ArtistGallery from "../components/ArtistGallery";
 import Cinematography from "../components/Cinematography";
 import Photography from "../components/Photography";
 import Contact from "../components/Contact";
@@ -28,6 +29,7 @@ export default function Home() {
           
           <div className="pt-20 space-y-20 md:space-y-32">
             <About />
+            <ArtistGallery />
             <Cinematography />
             <Photography />
             <Contact />
