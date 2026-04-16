@@ -8,7 +8,6 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
     return () => clearTimeout(timer);
   }, [setFinish]);
 
-  // Tip: Aap yahan Cloudinary ke direct links bhi daal sakti hain
   const gearImages = ["camera", "gimble", "Canon R6", "editing", "Photography"];
 
   return (
@@ -18,7 +17,6 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
       transition={{ duration: 1 }}
       className="fixed inset-0 z-[100] bg-[#050505] flex items-center justify-center overflow-hidden"
     >
-      {/* Background Images - Opacity increased from 20 to 45 for better visibility */}
       <div className="absolute inset-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 opacity-45 gap-1 p-1">
         {[...gearImages, ...gearImages].slice(0, 10).map((img, i) => (
           <motion.div
@@ -29,17 +27,15 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
             className="w-full h-full relative"
           >
             <img
-              src={`/images/${img}.jpg`} // Yahan Cloudinary link bhi laga sakti hain
+              src={`/images/${img}.jpg`}
               alt="Gear"
               className="w-full h-full object-cover grayscale brightness-110 contrast-110" 
             />
-            {/* Soft overlay to blend images */}
             <div className="absolute inset-0 bg-black/20"></div>
           </motion.div>
         ))}
       </div>
 
-      {/* Center Content */}
       <div className="relative z-20 text-center px-6 w-full max-w-4xl">
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -67,7 +63,6 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
           </p>
         </motion.div>
 
-        {/* Progress Bar Container */}
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-40 md:w-64 h-[2px] bg-white/5 rounded-full overflow-hidden">
             <motion.div 
                initial={{ x: "-100%" }}
@@ -78,7 +73,6 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
         </div>
       </div>
 
-      {/* Optimized Vignette - Taaki corners bohat dark na ho jayein */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_20%,black_85%)]" />
     </motion.div>
   );
