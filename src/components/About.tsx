@@ -11,7 +11,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="https://res.cloudinary.com/drscfltaf/image/upload/v1776314470/me2_bxnmim.jpg"
+           src={"https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314465/Cover_photo_szixrq.png"}
             alt="Usman Ghanni"
             className="
               w-full 
@@ -27,7 +27,7 @@ export default function About() {
           />
         </motion.div>
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 italic uppercase">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 italic uppercase hover:text-[#1F9A71] dark:hover:text-gray-400 transition">
             M. Usman Ghanni
           </h2>
 
