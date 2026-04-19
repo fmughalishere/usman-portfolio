@@ -38,7 +38,7 @@ export default function Photography() {
       className="py-16 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto bg-[#050505] text-white"
     >
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 md:mb-12 gap-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tighter border-l-4 border-blue-500 pl-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tighter border-l-4 border-[#1F9A71] pl-4">
           Photography
         </h2>
         <div className="flex flex-wrap gap-2 justify-center">
@@ -95,7 +95,7 @@ export default function Photography() {
             onClick={handleLoadMore}
             className="flex items-center gap-3 px-8 py-3 bg-zinc-900 border border-white/10 hover:border-white/40 text-white text-[10px] uppercase tracking-[0.3em] transition-all duration-500 group"
           >
-            <FaPlus className="group-hover:rotate-90 transition-transform duration-300 text-blue-500" />
+            <FaPlus className="group-hover:rotate-90 transition-transform duration-300 text-[#1F9A71]" />
             Explore More
           </button>
         </div>

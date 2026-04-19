@@ -51,7 +51,7 @@ export default function ArtistGallery() {
     <section className="py-24 bg-[#0a0a0a] border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col mb-16">
-          <span className="text-blue-500 uppercase tracking-[0.5em] text-[10px] font-bold mb-4">
+          <span className="text-[#1F9A71] uppercase tracking-[0.5em] text-[10px] font-bold mb-4">
             The Visionary
           </span>
           <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
@@ -67,16 +67,16 @@ export default function ArtistGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 border border-white/5 bg-[#0f0f0f] hover:border-blue-500/30 transition-colors duration-500 group"
+              className="p-8 border border-white/5 bg-[#0f0f0f] hover:border-[#1F9A71]/30 transition-colors duration-500 group"
             >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-blue-500 transition-colors uppercase tracking-tight">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#1F9A71] transition-colors uppercase tracking-tight">
                       {exp.role}
                     </h3>
                     <div className="flex items-center gap-2 mt-2 text-zinc-400 text-sm italic">
-                      <FaBriefcase className="text-blue-500 text-xs" />
+                      <FaBriefcase className="text-[#1F9A71] text-xs" />
                       <span>{exp.company}</span>
                     </div>
                   </div>
@@ -84,11 +84,11 @@ export default function ArtistGallery() {
 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-zinc-500">
-                    <FaCalendarAlt className="text-blue-500" />
+                    <FaCalendarAlt className="text-[#1F9A71]" />
                     {exp.duration}
                   </div>
                   <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-zinc-500">
-                    <FaMapMarkerAlt className="text-blue-500" />
+                    <FaMapMarkerAlt className="text-[#1F9A71]" />
                     {exp.location}
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function ArtistGallery() {
                 <ul className="space-y-3 mt-auto">
                   {exp.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
-                      <FaCheckCircle className="mt-1 text-blue-500 flex-shrink-0 text-[10px]" />
+                      <FaCheckCircle className="mt-1 text-[#1F9A71] flex-shrink-0 text-[10px]" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -106,7 +106,7 @@ export default function ArtistGallery() {
           ))}
         </div>
         <div className="mt-16 flex justify-end">
-          <p className="max-w-md text-right text-zinc-600 text-sm leading-relaxed italic border-r-2 border-blue-500 pr-4">
+          <p className="max-w-md text-right text-zinc-600 text-sm leading-relaxed italic border-r-2 border-[#1F9A71] pr-4">
             "5+ years of delivering impactful visual content through professional videography and photography across Dubai and Pakistan."
           </p>
         </div>
