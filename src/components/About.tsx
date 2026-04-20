@@ -11,15 +11,14 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <img
-           src={"https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314467/me1_ocyvia.jpg"}
+            src={"https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314467/me1_ocyvia.jpg"}
             alt="Usman Ghanni"
             className="
               w-full 
-              aspect-square 
-              object-cover 
+              h-auto 
+              object-contain 
               rounded-md
               transition duration-700
-
               grayscale-0
               md:grayscale
               md:hover:grayscale-0
@@ -56,7 +55,6 @@ export default function About() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
