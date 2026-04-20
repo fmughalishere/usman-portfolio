@@ -11,7 +11,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <img
-           src={"https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314473/me3_arxkeq.png"}
+           src={"https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314472/me4_bplsfd.jpg"}
             alt="Usman Ghanni"
             className="
               w-full 
