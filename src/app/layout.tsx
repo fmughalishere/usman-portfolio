@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata = {
-  title: 'M. Usman Ghanni | Photographer & Videographer',
+  title: 'Usman Ghanni | Photographer & Videographer',
   description: 'Professional Cinematography and Photography Portfolio',
 }
 
