@@ -28,7 +28,7 @@ export default function About() {
         </motion.div>
         <div>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 italic uppercase hover:text-[#1F9A71] dark:hover:text-gray-400 transition">
-            M. Usman Ghanni
+            Usman Ghanni
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-8">
