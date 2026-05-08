@@ -8,16 +8,16 @@ import { FaPlus } from "react-icons/fa";
 type Category = keyof typeof galleryData;
 
 const categories: Category[] = [
-  "Fashion",
-  "Food / Menu",
   "Event",
-  "Sports",
-  "Real Estate",
   "Swimming",
+  "Fashion",
+  "Real Estate",
+  "Sports",
+  "Food / Menu",
 ];
 
 export default function Photography() {
-  const [activeTab, setActiveTab] = useState<Category>("Fashion");
+  const [activeTab, setActiveTab] = useState<Category>("Event");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const INITIAL_COUNT = 6;
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);

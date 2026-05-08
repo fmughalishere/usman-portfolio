@@ -8,7 +8,7 @@ import ArtistGallery from "../components/ArtistGallery";
 import Cinematography from "../components/Cinematography";
 import Photography from "../components/Photography";
 import Contact from "../components/Contact";
-
+import Testimonials from "../components/Testimonials";
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
@@ -32,6 +32,7 @@ export default function Home() {
             <ArtistGallery />
             <Cinematography />
             <Photography />
+            <Testimonials/>
             <Contact />
           </div>
         </motion.div>

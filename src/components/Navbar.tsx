@@ -27,8 +27,8 @@ export default function Navbar() {
           alt="Logo"
           className="h-8 sm:h-10 w-auto object-contain"
         />
-        <span className="text-sm sm:text-xl font-bold tracking-tight uppercase hidden sm:block">
-          M. Usman Ghanni
+        <span className="text-sm sm:text-xl font-bold tracking-tight uppercase hidden sm:block text-black dark:text-white">
+          Usman Ghanni
         </span>
       </div>
 
@@ -43,8 +43,6 @@ export default function Navbar() {
           Contact
         </a>
       </div>
-
-      {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
