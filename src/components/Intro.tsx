@@ -48,7 +48,7 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
             animate={{ y: 0 }}
             className="text-white text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter leading-none"
           >
-            M <span className="text-[#1F9A71]">Usman Ghanni</span>
+           Usman <span className="text-[#1F9A71]"> Ghanni</span>
           </motion.h1>
           
           <motion.div

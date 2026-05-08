@@ -24,12 +24,14 @@ export default function Photography() {
 
   const allImages = galleryData[activeTab] || [];
   const displayedImages = allImages.slice(0, visibleCount);
+
   useEffect(() => {
     setVisibleCount(INITIAL_COUNT);
   }, [activeTab]);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 6);
+    // Is line ko update kiya gaya hai taake click pe saari images load hon
+    setVisibleCount(allImages.length);
   };
 
   return (
@@ -89,6 +91,7 @@ export default function Photography() {
           ))}
         </AnimatePresence>
       </motion.div>
+      
       {visibleCount < allImages.length && (
         <div className="mt-12 flex justify-center">
           <button
@@ -100,6 +103,7 @@ export default function Photography() {
           </button>
         </div>
       )}
+
       <AnimatePresence>
         {selectedImage && (
           <motion.div
