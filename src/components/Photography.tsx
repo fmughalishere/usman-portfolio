@@ -8,12 +8,12 @@ import { FaPlus } from "react-icons/fa";
 type Category = keyof typeof galleryData;
 
 const categories: Category[] = [
-  "Event",
+  "Sports",
+  //"Event",
   "Swimming",
   "Fashion",
-  "Real Estate",
-  "Sports",
-  "Food / Menu",
+  "Real Estate", 
+  "Menu",
 ];
 
 export default function Photography() {
@@ -30,7 +30,6 @@ export default function Photography() {
   }, [activeTab]);
 
   const handleLoadMore = () => {
-    // Is line ko update kiya gaya hai taake click pe saari images load hon
     setVisibleCount(allImages.length);
   };
 

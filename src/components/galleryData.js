@@ -42,7 +42,7 @@ export const galleryData = {
     "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314660/Fashion_39_lcnblc.jpg",
     "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314662/Fashion_40_hjms1g.jpg",
   ],
-  "Food / Menu": [
+  "Menu": [
     "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314687/menu_1_mysnho.jpg",
     "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314689/menu_2_fxadj5.jpg",
     "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314692/menu_3_xtfuzv.jpg",
