@@ -48,18 +48,18 @@ const experiences = [
 
 export default function ArtistGallery() {
   return (
-    <section className="py-24 bg-[#0a0a0a] border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col mb-16">
-          <span className="text-[#1F9A71] uppercase tracking-[0.5em] text-[10px] font-bold mb-4">
+    <section className="py-12 md:py-24 bg-[#0a0a0a] border-y border-white/5 w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div className="flex flex-col mb-10 md:mb-16">
+          <span className="text-[#1F9A71] uppercase tracking-[0.3em] sm:tracking-[0.5em] text-[10px] font-bold mb-3 md:mb-4">
             The Visionary
           </span>
-          <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-tight md:leading-none text-white">
             Professional <br /> <span className="text-zinc-800">Experience</span>
           </h2>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {experiences.map((exp, i) => (
             <motion.div
               key={i}
@@ -67,32 +67,30 @@ export default function ArtistGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="p-8 border border-white/5 bg-[#0f0f0f] hover:border-[#1F9A71]/30 transition-colors duration-500 group"
+              className="p-5 sm:p-8 border border-white/5 bg-[#0f0f0f] hover:border-[#1F9A71]/30 transition-colors duration-500 group flex flex-col justify-between"
             >
               <div className="flex flex-col h-full">
-                <div className="flex justify-between items-start mb-4">
+                                <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#1F9A71] transition-colors uppercase tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#1F9A71] transition-colors uppercase tracking-tight fallback-break">
                       {exp.role}
                     </h3>
                     <div className="flex items-center gap-2 mt-2 text-zinc-400 text-sm italic">
-                      <FaBriefcase className="text-[#1F9A71] text-xs" />
-                      <span>{exp.company}</span>
+                      <FaBriefcase className="text-[#1F9A71] text-xs flex-shrink-0" />
+                      <span className="break-words">{exp.company}</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="flex flex-wrap gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-zinc-500">
-                    <FaCalendarAlt className="text-[#1F9A71]" />
+                <div className="flex flex-wrap gap-x-4 gap-y-2 mb-6">
+                  <div className="flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-widest text-zinc-500">
+                    <FaCalendarAlt className="text-[#1F9A71] flex-shrink-0" />
                     {exp.duration}
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-zinc-500">
-                    <FaMapMarkerAlt className="text-[#1F9A71]" />
+                  <div className="flex items-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-widest text-zinc-500">
+                    <FaMapMarkerAlt className="text-[#1F9A71] flex-shrink-0" />
                     {exp.location}
                   </div>
                 </div>
-
                 <ul className="space-y-3 mt-auto">
                   {exp.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-zinc-400 text-sm leading-relaxed">
@@ -101,15 +99,17 @@ export default function ArtistGallery() {
                     </li>
                   ))}
                 </ul>
+
               </div>
             </motion.div>
           ))}
         </div>
-        <div className="mt-16 flex justify-end">
-          <p className="max-w-md text-right text-zinc-600 text-sm leading-relaxed italic border-r-2 border-[#1F9A71] pr-4">
+        <div className="mt-12 md:mt-16 flex justify-center md:justify-end">
+          <p className="max-w-md text-center md:text-right text-zinc-600 text-sm leading-relaxed italic border-none md:border-r-2 md:border-[#1F9A71] md:pr-4 px-4 md:px-0">
             "5+ years of delivering impactful visual content through professional videography and photography across Dubai and Pakistan."
           </p>
         </div>
+
       </div>
     </section>
   );
