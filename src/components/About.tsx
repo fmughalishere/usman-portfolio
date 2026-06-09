@@ -54,7 +54,7 @@ export default function About() {
             <img
               src="https://res.cloudinary.com/dtbfahzvc/image/upload/v1781032780/DSC00003-2-6_kwuldh.jpg"
               alt="Usman Ghanni"
-              className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
+              className="w-full h-full object-cover md:grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
           </div>
@@ -69,6 +69,7 @@ export default function About() {
             </h3>
           </div>
         </motion.div>
+
         <div className="lg:col-span-7 flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,6 +129,7 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+
       <div className="mt-40">
         <div className="flex flex-col items-center mb-16 text-center">
           <h3 className="text-xs uppercase tracking-[0.6em] text-[#1F9A71] font-black mb-4">
