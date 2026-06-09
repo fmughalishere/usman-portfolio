@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { galleryData } from "./galleryData";
+import { galleryData, getMediaUrl } from "./galleryData";
 import { FaPlus } from "react-icons/fa";
 
 type Category = keyof typeof galleryData;
 
 const categories: Category[] = [
   "Sports",
-  //"Event",
+  "Event",
   "Swimming",
   "Fashion",
   "Real Estate", 
@@ -17,7 +17,7 @@ const categories: Category[] = [
 ];
 
 export default function Photography() {
-  const [activeTab, setActiveTab] = useState<Category>("Event");
+  const [activeTab, setActiveTab] = useState<Category>("Sports");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const INITIAL_COUNT = 6;
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
@@ -58,36 +58,41 @@ export default function Photography() {
           ))}
         </div>
       </div>
+      
       <motion.div
         layout
         className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 min-h-[300px]"
       >
         <AnimatePresence mode="popLayout">
-          {displayedImages.map((src: string, i: number) => (
-            <motion.div
-              key={src}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-              className="break-inside-avoid"
-            >
-              <div
-                onClick={() => setSelectedImage(src)}
-                className="relative group overflow-hidden bg-zinc-900 border border-white/5 cursor-pointer rounded-sm"
+          {displayedImages.map((fileName: string, i: number) => {
+            const imageUrl = getMediaUrl(activeTab, fileName);
+
+            return (
+              <motion.div
+                key={fileName}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+                className="break-inside-avoid"
               >
-                <img
-                  src={src}
-                  alt={activeTab}
-                  loading="lazy"
-                  className="w-full h-auto max-h-[400px] md:max-h-none object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                   <span className="text-[10px] uppercase tracking-widest border border-white/50 px-3 py-1">View Full</span>
+                <div
+                  onClick={() => setSelectedImage(imageUrl)}
+                  className="relative group overflow-hidden bg-zinc-900 border border-white/5 cursor-pointer rounded-sm"
+                >
+                  <img
+                    src={imageUrl}
+                    alt={activeTab}
+                    loading="lazy"
+                    className="w-full h-auto max-h-[400px] md:max-h-none object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                     <span className="text-[10px] uppercase tracking-widest border border-white/50 px-3 py-1">View Full</span>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </motion.div>
       

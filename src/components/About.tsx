@@ -52,7 +52,7 @@ export default function About() {
         >
           <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 aspect-[4/5]">
             <img
-              src="https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314465/Cover_photo_szixrq.png"
+              src="https://res.cloudinary.com/dtbfahzvc/image/upload/v1781032780/DSC00003-2-6_kwuldh.jpg"
               alt="Usman Ghanni"
               className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
             />

@@ -7,7 +7,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const logoUrl =
-    "https://res.cloudinary.com/drscfltaf/image/upload/q_auto/f_auto/v1776314428/logo_tvftsz.png";
+    "https://res.cloudinary.com/dtbfahzvc/image/upload/v1781035937/favicon_basmem.png";
 
   return (
     <motion.nav
