@@ -149,11 +149,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 right-0 opacity-[0.03] pointer-events-none select-none overflow-hidden">
-        <h1 className="text-[25rem] font-black leading-none translate-y-24 translate-x-24">
-          USMAN
-        </h1>
-      </div>
     </footer>
   );
 }

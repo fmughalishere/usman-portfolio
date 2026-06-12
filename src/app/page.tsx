@@ -24,7 +24,7 @@ export default function Home() {
         >
           <Navbar />
           
-          <div className="pt-20 space-y-20 md:space-y-32">
+          <div className="pt-1 space-y-10 md:space-y-16">
             <About />
             <ArtistGallery />
             <Cinematography />

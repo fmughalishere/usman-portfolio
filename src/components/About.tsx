@@ -39,7 +39,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 md:py-40 px-6 max-w-7xl mx-auto relative overflow-hidden"
+      className="py-5 md:py-40 px-6 max-w-7xl mx-auto relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 -z-10 opacity-5 blur-[120px] bg-[#1F9A71] w-[300px] h-[300px] rounded-full"></div>
 
@@ -130,13 +130,13 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-40">
+      <div className="mt-30">
         <div className="flex flex-col items-center mb-16 text-center">
-          <h3 className="text-xs uppercase tracking-[0.6em] text-[#1F9A71] font-black mb-4">
+          <h3 className="text-sm md:text-base uppercase tracking-[0.6em] text-[#1F9A71] font-black mb-4">
             Core Services
           </h3>
           <div className="h-[2px] w-12 bg-white/20 mb-4"></div>
-          <p className="text-zinc-500 text-sm max-w-xs font-medium">
+          <p className="text-zinc-500 text-base max-w-md font-medium">
             Elevating your brand through professional visual solutions.
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function About() {
               <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-2 group-hover:text-[#1F9A71] transition-colors">
                 {service.title}
               </h4>
-              <p className="text-zinc-600 text-[10px] leading-tight font-medium uppercase tracking-tighter">
+              <p className="text-zinc-600 text-[13px] leading-tight font-medium tracking-tighter">
                 {service.desc}
               </p>
 

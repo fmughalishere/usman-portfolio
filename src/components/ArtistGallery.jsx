@@ -48,13 +48,10 @@ const experiences = [
 
 export default function ArtistGallery() {
   return (
-    <section className="py-12 md:py-24 bg-[#0a0a0a] border-y border-white/5 w-full overflow-hidden">
+    <section className="pt-0 pb-12 md:pb-24 border-y border-white/5 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
-        <div className="flex flex-col mb-10 md:mb-16">
-          <span className="text-[#1F9A71] uppercase tracking-[0.3em] sm:tracking-[0.5em] text-[10px] font-bold mb-3 md:mb-4">
-            The Visionary
-          </span>
+        <div className="flex flex-col mb-3 md:mb-5">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-tight md:leading-none text-white">
             Professional <br /> <span className="text-zinc-800">Experience</span>
           </h2>
@@ -72,7 +69,7 @@ export default function ArtistGallery() {
               <div className="flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#1F9A71] transition-colors uppercase tracking-tight fallback-break">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#1F9A71] transition-colors tracking-tight fallback-break">
                       {exp.role}
                     </h3>
                     <div className="flex items-center gap-2 mt-2 text-zinc-400 text-sm italic">
@@ -104,12 +101,6 @@ export default function ArtistGallery() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-12 md:mt-16 flex justify-center md:justify-end">
-          <p className="max-w-md text-center md:text-right text-zinc-600 text-sm leading-relaxed italic border-none md:border-r-2 md:border-[#1F9A71] md:pr-4 px-4 md:px-0">
-            "5+ years of delivering impactful visual content through professional videography and photography across Dubai and Pakistan."
-          </p>
-        </div>
-
       </div>
     </section>
   );
