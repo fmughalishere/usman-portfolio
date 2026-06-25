@@ -1,11 +1,24 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { galleryData, getMediaUrl } from "./galleryData";
+import { galleryData, getMediaUrl, getThumbnailUrl, getVideoPosterUrl } from "./galleryData";
 
 export default function Cinematography() {
   const videoKeys = galleryData.motionVideos;
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleMouseEnter = (index: number) => {
+    videoRefs.current[index]?.play();
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const video = videoRefs.current[index];
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  };
 
   return (
     <section id="work" className="py-16 md:py-24 bg-[#050505]">
@@ -13,10 +26,11 @@ export default function Cinematography() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase mb-8 md:mb-12 border-l-4 border-white pl-4 tracking-tighter">
           Motion Portfolio
         </h2>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {videoKeys.map((fileName, i) => {
             const videoUrl = getMediaUrl("motionVideos", fileName);
+            const posterUrl = getVideoPosterUrl(fileName);
 
             return (
               <motion.div
@@ -25,40 +39,64 @@ export default function Cinematography() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 onClick={() => setSelectedVideo(videoUrl)}
+                onMouseEnter={() => handleMouseEnter(i)}
+                onMouseLeave={() => handleMouseLeave(i)}
                 className="
-                  relative 
-                  w-full 
+                  relative
+                  w-full
                   h-[200px] sm:h-[280px] md:h-[260px] lg:h-[300px]
-                  bg-zinc-900 
-                  overflow-hidden 
-                  group 
-                  border border-white/5 
-                  rounded-md 
-                  shadow-xl 
+                  bg-zinc-900
+                  overflow-hidden
+                  group
+                  border border-white/5
+                  rounded-md
+                  shadow-xl
                   cursor-pointer
                 "
               >
+                {/* Poster image — video load hone tak dikhta hai */}
+                <img
+                  src={posterUrl}
+                  alt={`Video ${i + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-0 transition-opacity duration-300"
+                />
+
+                {/* Video — sirf hover py play hoga */}
                 <video
+                  ref={(el) => { videoRefs.current[i] = el; }}
                   src={videoUrl}
                   muted
                   loop
                   playsInline
-                  autoPlay
-                  preload="metadata"
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out"
+                  preload="none"           // ← key change: load hi mat karo pehle
+                  poster={posterUrl}
+                  className="w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out"
                 />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all duration-500"></div>
+
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-all duration-500" />
+
+                {/* Play icon — hover se pehle */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-60 group-hover:opacity-0 transition-opacity duration-300">
+                  <div className="w-12 h-12 rounded-full border-2 border-white/70 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500">
                   <p className="text-[8px] sm:text-[10px] uppercase tracking-[0.3em] text-white/80 font-bold">
                     Cinematography // {String(i + 1).padStart(2, "0")}
                   </p>
-                  <div className="mt-1 h-[1px] w-full sm:w-0 sm:group-hover:w-full bg-white/40 transition-all duration-700"></div>
+                  <div className="mt-1 h-[1px] w-full sm:w-0 sm:group-hover:w-full bg-white/40 transition-all duration-700" />
                 </div>
               </motion.div>
             );
           })}
         </div>
       </div>
+
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedVideo && (
           <motion.div
@@ -74,10 +112,7 @@ export default function Cinematography() {
               &times;
             </button>
 
-            <div
-              className="absolute inset-0"
-              onClick={() => setSelectedVideo(null)}
-            ></div>
+            <div className="absolute inset-0" onClick={() => setSelectedVideo(null)} />
 
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}

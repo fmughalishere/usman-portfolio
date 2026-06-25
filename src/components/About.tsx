@@ -39,7 +39,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-5 md:py-40 px-6 max-w-7xl mx-auto relative overflow-hidden"
+      className="pt-24 pb-5 md:py-40 px-6 max-w-7xl mx-auto relative overflow-hidden"
     >
       <div className="absolute top-0 right-0 -z-10 opacity-5 blur-[120px] bg-[#1F9A71] w-[300px] h-[300px] rounded-full"></div>
 
@@ -52,7 +52,7 @@ export default function About() {
         >
           <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 aspect-[4/5]">
             <img
-              src="https://res.cloudinary.com/dtbfahzvc/image/upload/v1781032780/DSC00003-2-6_kwuldh.jpg"
+              src="https://res.cloudinary.com/dtbfahzvc/image/upload/f_auto,q_auto,w_800/v1781032780/DSC00003-2-6_kwuldh.jpg"
               alt="Usman Ghanni"
               className="w-full h-full object-cover md:grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110"
             />
@@ -94,16 +94,16 @@ export default function About() {
                 creative content that actually delivers impact.
               </p>
               <p>
-                In today’s fast-moving online world, low-quality visuals and
+                In today's fast-moving online world, low-quality visuals and
                 inconsistent content can make even great brands go unnoticed.{" "}
                 <span className="text-white italic">
-                  That’s where I come in.
+                  That's where I come in.
                 </span>
               </p>
               <p>
                 With years of experience in filmmaking and visual storytelling,
                 every project is crafted with creativity, strategy, and a clear
-                understanding of what works in today’s digital space.
+                understanding of what works in today's digital space.
               </p>
             </div>
 

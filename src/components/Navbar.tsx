@@ -27,7 +27,7 @@ export default function Navbar() {
           alt="Logo"
           className="h-8 sm:h-10 w-auto object-contain"
         />
-        <span className="text-sm sm:text-xl font-bold tracking-tight uppercase hidden sm:block text-black dark:text-white">
+        <span className="text-sm sm:text-xl font-bold tracking-tight uppercase text-black dark:text-white">
           Usman Ghanni
         </span>
       </div>

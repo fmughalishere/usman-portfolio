@@ -193,9 +193,26 @@ export const galleryData = {
   ],
 };
 
+export const getThumbnailUrl = (category, fileName) => {
+  const isVideo = category === "motionVideos";
+
+  if (isVideo) {
+    return `${CLOUDINARY_CONFIG.videoBaseUrl}/f_auto,q_auto,w_400,so_0/v1781031413/${fileName}.jpg`;
+  }
+
+  return `${CLOUDINARY_CONFIG.imageBaseUrl}/f_auto,q_auto,w_400/v1781031413/${fileName}.jpg`;
+};
+
 export const getMediaUrl = (category, fileName) => {
   const isVideo = category === "motionVideos";
-  const baseUrl = isVideo ? CLOUDINARY_CONFIG.videoBaseUrl : CLOUDINARY_CONFIG.imageBaseUrl;
-  const extension = isVideo ? ".mp4" : ".jpg";
-    return `${baseUrl}/v1781031413/${fileName}${extension}`;
+
+  if (isVideo) {
+    return `${CLOUDINARY_CONFIG.videoBaseUrl}/f_auto,q_auto:low,w_1280/v1781031413/${fileName}.mp4`;
+  }
+
+  return `${CLOUDINARY_CONFIG.imageBaseUrl}/f_auto,q_auto,w_1920/v1781031413/${fileName}.jpg`;
+};
+
+export const getVideoPosterUrl = (fileName) => {
+  return `${CLOUDINARY_CONFIG.videoBaseUrl}/f_auto,q_auto,w_800,so_0/v1781031413/${fileName}.jpg`;
 };
